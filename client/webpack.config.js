@@ -5,7 +5,7 @@ module.exports = {
   context: path.join(__dirname, 'src'),
   entry: './js/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../public'),
     filename: 'index.min.js',
   },
   module: {
@@ -24,6 +24,15 @@ module.exports = {
         loaders: ['style', 'css', 'sass']
       }
     ]
+  },
+  devServer: {
+    // historyApiFallback: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000/',
+        secure: false
+      }
+    }
   },
   plugins: [
     new CopyWebpackPlugin([
