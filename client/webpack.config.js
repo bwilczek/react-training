@@ -8,6 +8,9 @@ module.exports = {
     path: path.resolve(__dirname, '../public'),
     filename: 'index.min.js',
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
     loaders: [
       {
@@ -26,7 +29,7 @@ module.exports = {
     ]
   },
   devServer: {
-    // historyApiFallback: true,
+    historyApiFallback: true,
     proxy: {
       '/api': {
         target: 'http://localhost:3000/',
