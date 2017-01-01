@@ -10,17 +10,22 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { add2to3: () => dispatch(add(2,3)) };
+  return { add: (operand1, operand2) => dispatch(add(operand1, operand2)) };
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Application extends React.Component {
+
+  accumulate() {
+    this.props.add(this.props.calculator.accumulator,1)
+  }
+
   render() {
     return (
       <div>
-        Hello World. <span>{this.props.calculator.result}</span>
+        Hello World. <span>{this.props.calculator.accumulator}</span>
         <br />
-        <span onClick={this.props.add2to3}>take five!</span>
+        <span onClick={this.accumulate.bind(this)}>take five!</span>
       </div>
     );
   }

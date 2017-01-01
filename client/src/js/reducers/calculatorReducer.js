@@ -1,11 +1,17 @@
 const initialState = {
-  result: 0,
+  accumulator: 0,
 }
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case 'CALCULATOR_ADD': {
-      return {...state, result: action.payload.operand1+action.payload.operand2}
+    // case 'CALCULATOR_ADD_PENDING': {
+    //   return {...state, result: '...'}
+    // }
+    // case 'CALCULATOR_ADD_REJECTED': {
+    //   return {...state, result: 'ERR'}
+    // }
+    case 'CALCULATOR_ADD_FULFILLED': {
+      return {...state, accumulator: action.payload.data.result}
     }
   }
   return state

@@ -4,9 +4,7 @@ import { createStore } from 'redux'
 import { Router, Route, browserHistory } from 'react-router'
 
 import Root from './components/Root.jsx';
-import reducers from './reducers'
-
-let store = createStore(reducers)
+import store from './store'
 
 const app = document.getElementById('application')
 
