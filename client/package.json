@@ -19,6 +19,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
+    "lodash": "^4.17.4",
     "node-sass": "^4.1.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
