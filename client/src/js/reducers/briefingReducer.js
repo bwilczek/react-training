@@ -1,8 +1,6 @@
 import { cloneDeep } from 'lodash'
 
-const initialState = {
-  'EPWR': { icao_code: 'EPWR', metar: { data: 'sample metar' } }
-}
+const initialState = {}
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
