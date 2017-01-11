@@ -1,14 +1,15 @@
-import React, { PropTypes } from 'react';
-import { Provider } from 'react-redux';
-import { Router, IndexRoute, Route, browserHistory } from 'react-router';
+import React, { PropTypes } from 'react'
+import { Provider } from 'react-redux'
+import { Router, IndexRoute, Route, browserHistory } from 'react-router'
 
-import Application from './Application';
-import HomePage from '../pages/HomePage';
-import AccumulatorPage from '../pages/AccumulatorPage';
-import ToDoPage from '../pages/ToDoPage';
-import BriefingPage from '../pages/BriefingPage';
-import BriefingSelectionPage from '../pages/BriefingSelectionPage';
-import NoMatchPage from '../pages/NoMatchPage';
+import Application from './Application'
+import HomePage from '../pages/HomePage'
+import AccumulatorPage from '../pages/AccumulatorPage'
+import ToDoPage from '../pages/ToDoPage'
+import SeriesPage from '../pages/SeriesPage'
+import BriefingPage from '../pages/BriefingPage'
+import BriefingSelectionPage from '../pages/BriefingSelectionPage'
+import NoMatchPage from '../pages/NoMatchPage'
 
 export default class Root extends React.Component {
 
@@ -25,6 +26,7 @@ export default class Root extends React.Component {
             <IndexRoute component={HomePage}/>
             <Route path="home" component={HomePage}/>
             <Route path="accumulator" component={AccumulatorPage}/>
+            <Route path="series" component={SeriesPage}/>
             <Route path="todos" component={ToDoPage}/>
             <Route path="briefing" component={BriefingSelectionPage} />
             <Route path="briefing/:icaoCode" component={BriefingPage}/>

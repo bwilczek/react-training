@@ -15,7 +15,7 @@ const makeMapStateToProps = () => {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { briefAll: (icaoCode) => dispatch(brief.all(icaoCode)) };
+  return { briefAll: (icaoCode) => dispatch(brief.all(icaoCode)) }
 }
 
 @connect(makeMapStateToProps, mapDispatchToProps)

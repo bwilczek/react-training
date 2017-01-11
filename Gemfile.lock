@@ -115,7 +115,7 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    vfr_utils (0.0.5)
+    vfr_utils (0.0.6)
       faraday (~> 0.9)
       nokogiri (~> 1.5)
       redis (~> 3.2)
@@ -135,7 +135,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   tzinfo-data
-  vfr_utils (~> 0.0.5)
+  vfr_utils (~> 0.0.6)
 
 BUNDLED WITH
    1.13.6
