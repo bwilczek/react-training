@@ -5,9 +5,8 @@ const initialState = {}
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case 'SERIES_APPEND': {
-      console.log('append reduced')
       let newState = cloneDeep(state)
-      if(!newState[action.payload.id]) {
+      if (!newState[action.payload.id]) {
         newState[action.payload.id] = []
       }
       newState[action.payload.id] = concat(newState[action.payload.id], [parseInt(action.payload.value)])
