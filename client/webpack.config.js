@@ -9,7 +9,7 @@ module.exports = {
     filename: 'index.min.js',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.json']
   },
   module: {
     loaders: [
@@ -21,6 +21,10 @@ module.exports = {
           presets: ['react', 'es2015', 'stage-0'],
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         }
+      },
+      {
+          test: /\.json$/,
+          loader: 'json'
       },
       {
         test: /\.s?css$/,

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   scope '/api' do
     post '/calculator/add', to: 'calculator#add'
     post '/briefing/all', to: 'briefing#all'
+    post '/intl', to: 'intl#list'
     # get '*unmatched_route', :to => redirect('/')
   end
 
