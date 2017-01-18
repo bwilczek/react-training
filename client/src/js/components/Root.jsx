@@ -28,7 +28,7 @@ export default class Root extends React.Component {
             <Route path="accumulator" component={AccumulatorPage}/>
             <Route path="series" component={SeriesPage}/>
             <Route path="todos" component={ToDoPage}/>
-            <Route path="briefing" component={BriefingSelectionPage} />
+            <Route path="briefing" component={BriefingSelectionPage}/>
             <Route path="briefing/:icaoCode" component={BriefingPage}/>
             <Route path="*" component={NoMatchPage}/>
           </Route>

@@ -9,10 +9,10 @@ export default class NavigationBar extends React.Component {
     return (
       <div>
         <Link to='/'>Home</Link> |&nbsp;
-        <Link to='accumulator'>Accumulator</Link> |&nbsp;
-        <Link to='todos'>ToDos</Link> |&nbsp;
-        <Link to='briefing'>Briefing</Link> |&nbsp;
-        <Link to='series'>Number series</Link> |&nbsp;
+        <Link to='/accumulator'>Accumulator</Link> |&nbsp;
+        <Link to='/todos'>ToDos</Link> |&nbsp;
+        <Link to='/briefing'>Briefing</Link> |&nbsp;
+        <Link to='/series'>Number series</Link> |&nbsp;
         <LocaleSelector />
         <hr />
       </div>

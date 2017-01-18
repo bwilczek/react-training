@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { updateIntl } from 'react-intl-redux'
 
 import { fetchIntl } from '../actions/fetchIntlActions'
+import { splashOff } from '../actions/alertActions'
 
 @connect(
   (state) => {
@@ -20,6 +21,9 @@ import { fetchIntl } from '../actions/fetchIntlActions'
       },
       updateIntl: (locale, messages) => {
         dispatch(updateIntl({locale, messages}))
+      },
+      hideSplash: () => {
+        dispatch(splashOff())
       }
     }
   }
@@ -29,15 +33,16 @@ export default class LocaleSelector extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.newLocale !== nextProps.newLocale) {
       this.props.updateIntl(nextProps.newLocale, nextProps.newMessages)
+      this.props.hideSplash()
     }
   }
 
   render() {
+    const locales = ['en', 'pl', 'es']
+
     return (
       <DropdownButton bsSize="xsmall" title={this.props.locale} id="bg-nested-dropdown">
-        <MenuItem onClick={this.props.fetchIntl.bind(this)} data-locale="es">es</MenuItem>
-        <MenuItem onClick={this.props.fetchIntl.bind(this)} data-locale="en">en</MenuItem>
-        <MenuItem onClick={this.props.fetchIntl.bind(this)} data-locale="pl">pl</MenuItem>
+        { locales.map((l) => <MenuItem key={l} onClick={this.props.fetchIntl.bind(this)} data-locale={l}>{l}</MenuItem>)}
       </DropdownButton>
     );
   }

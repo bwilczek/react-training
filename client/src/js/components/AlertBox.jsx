@@ -13,7 +13,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actionCloseAlert: () => dispatch(actions.clear()) }
+  return { actionCloseAlert: () => dispatch(actions.alertClear()) }
 }
 
 @connect(mapStateToProps, mapDispatchToProps)

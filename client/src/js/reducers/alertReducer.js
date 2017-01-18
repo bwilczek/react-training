@@ -1,6 +1,7 @@
 const initialState = {
   style: null,
-  message: null
+  message: null,
+  splash: true
 }
 
 export default function reducer(state = initialState, action) {
@@ -10,6 +11,12 @@ export default function reducer(state = initialState, action) {
     }
     case 'BRIEFING_ALL_REJECTED': {
       return {...state, style: 'danger', message: 'Could not fetch data'}
+    }
+    case 'SPLASH_ON': {
+      return {...state, splash: true}
+    }
+    case 'SPLASH_OFF': {
+      return {...state, splash: false}
     }
   }
   return state
