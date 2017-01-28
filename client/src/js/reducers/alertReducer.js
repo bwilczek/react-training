@@ -12,6 +12,9 @@ export default function reducer(state = initialState, action) {
     case 'BRIEFING_ALL_REJECTED': {
       return {...state, style: 'danger', message: 'Could not fetch data'}
     }
+    case 'XHR_REQUEST_FAILED': {
+      return {...state, style: 'danger', message: 'Could not fetch data'}
+    }
     case 'SPLASH_ON': {
       return {...state, splash: true}
     }
