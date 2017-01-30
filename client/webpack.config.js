@@ -39,6 +39,10 @@ module.exports = {
         loader: "url?limit=10000&mimetype=application/octet-stream"
       },
       {
+        test: /\.png(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url?limit=20000&mimetype=image/png"
+      },
+      {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader: "file"
       },

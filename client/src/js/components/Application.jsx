@@ -26,7 +26,6 @@ import { fetchIntl } from '../actions/fetchIntlActions'
 export default class Application extends React.Component {
 
   componentWillMount() {
-    console.log(this.props.messages)
     if(isEmpty(this.props.messages)) {
       // Make EN default language
       this.props.fetchDefaultIntl()
