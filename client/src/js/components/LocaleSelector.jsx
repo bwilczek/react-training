@@ -1,6 +1,7 @@
 import React from 'react'
 import { DropdownButton, MenuItem } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { without } from 'lodash'
 
 import { fetchIntl } from '../actions/fetchIntlActions'
 
@@ -25,7 +26,7 @@ export default class LocaleSelector extends React.Component {
 
     return (
       <DropdownButton bsSize="xsmall" title={this.props.locale} id="bg-nested-dropdown">
-        { locales.map((l) => <MenuItem key={l} onClick={this.props.fetchIntl.bind(this)} disabled={(l == this.props.locale)} data-locale={l}>{l}</MenuItem>) }
+        { without(locales, this.props.locale).map((l) => <MenuItem key={l} onClick={this.props.fetchIntl.bind(this)} data-locale={l}>{l}</MenuItem>) }
       </DropdownButton>
     );
   }
