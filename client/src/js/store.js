@@ -16,8 +16,13 @@ addLocaleData([
 ])
 // END OF LOCALE HANDLING
 
-// const middleware = applyMiddleware(promise(), thunk, logger())
-const middleware = applyMiddleware(promise(), thunk)
+let middleware = null;
+
+if(process.env.NODE_ENV !== 'production') {
+  middleware = applyMiddleware(promise(), thunk, require('redux-immutable-state-invariant')())
+} else {
+  middleware = applyMiddleware(promise(), thunk)
+}
 
 const persistedState = localStorage.getItem('reduxState1') ? JSON.parse(localStorage.getItem('reduxState1')) : undefined
 
